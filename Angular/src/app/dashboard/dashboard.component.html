@@ -1,12 +1,32 @@
 <md-toolbar class="navbar-fixed-top" color="warn">
-    <a class="btn"><i class="fa fa-bars" aria-hidden="true"></i></a>
+    <a class="topnav-button" (click)="sidenav.toggle()"><i class="fa fa-bars" aria-hidden="true"></i></a>
     <span class="spacer"></span>
     <a class="title" routerLink="/home">OneMovie</a>
     <span class="spacer"></span>
-    <a class="btn" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"> Sign In</i></a>
-
+    <a class="topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
 </md-toolbar>
 
 
 
-<router-outlet></router-outlet>
+<md-sidenav-container>
+  <md-sidenav #sidenav>
+    <form class="form-inline" #seachForm="ngForm" role="form" (submit)="search(); sidenav.toggle()">
+        <div class="input-group">
+            <span class="searchIcon input-group-addon" id="search"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <input type="text" required class="search form-control" placeholder="Rechercher un film, une série ..." aria-describedby="search" name="search" [(ngModel)]="searchQuery">
+        </div>
+        <button type="submit" [disabled]="!seachForm.form.valid" hidden></button>
+    </form>
+
+    <a (click)="sidenav.toggle()" class="sidenav-button">En salle</a>
+    <a (click)="sidenav.toggle()" class="sidenav-button">Populaire</a>
+    <a (click)="sidenav.toggle()" class="sidenav-button">Meilleurs cote</a>
+    <a (click)="sidenav.toggle()" class="sidenav-button">Prochainement</a>
+    <a (click)="sidenav.toggle()" class="sidenav-button">Listes</a>
+
+  </md-sidenav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
