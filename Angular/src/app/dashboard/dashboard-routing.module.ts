@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+import { PageNotFoundComponent } from './not-found.component';
 
 const routes: Routes = [
 	{
@@ -8,6 +9,7 @@ const routes: Routes = [
 		children: [
 			{ path: '', loadChildren: './home/home.module#HomeModule'},
 			{ path: 'home', loadChildren: './home/home.module#HomeModule'},
+			{ path: '**', component: PageNotFoundComponent }
 		]
 	}
 ];

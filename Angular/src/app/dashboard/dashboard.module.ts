@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+import { PageNotFoundComponent } from './not-found.component';
 
 import {  MdToolbarModule, MdSidenavModule } from '@angular/material';
 
@@ -15,6 +16,9 @@ import {  MdToolbarModule, MdSidenavModule } from '@angular/material';
     MdSidenavModule,
     FormsModule
   ],
-  declarations: [DashboardComponent]
+  declarations: [
+    DashboardComponent,
+    PageNotFoundComponent
+  ]
 })
 export class DashboardModule { }

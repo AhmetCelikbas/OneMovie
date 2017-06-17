@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import 'hammerjs';
 
+import { ConfigService } from './services/config.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +25,9 @@ import 'hammerjs';
     AppRoutingModule,
     MdProgressBarModule
   ],
-  providers: [],
+  providers: [
+    ConfigService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
