@@ -7,4 +7,8 @@ html, body {
     height: 100%;
 }
 
+.spacer {
+  flex: 1 1 auto;
+}
+
 @import "./_splashscreen.scss";

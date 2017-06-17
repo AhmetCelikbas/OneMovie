@@ -4,10 +4,13 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 
+import {  MdToolbarModule } from '@angular/material';
+
 @NgModule({
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    MdToolbarModule
   ],
   declarations: [DashboardComponent]
 })

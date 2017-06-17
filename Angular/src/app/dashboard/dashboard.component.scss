@@ -1,0 +1,28 @@
+
+/* TOP NAV */
+md-toolbar {
+    z-index: 1000;
+    padding: 0px;
+
+    .title {
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn {
+        color: #FFF;
+        min-width: 50px;
+        line-height: 64px;
+        margin: 0px;
+        padding: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 0px;
+        border-radius: 0px;
+    }
+    .btn:hover {
+        background-color: #AF4339;
+        cursor: pointer;
+    }
+
+}
