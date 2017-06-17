@@ -1,5 +1,7 @@
 package com.lpsmin.onemovie.services;
 
+import com.lpsmin.onemovie.model.Review;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -8,7 +10,7 @@ import retrofit2.http.Path;
  * Created by younes on 16/06/2017.
  */
 
-public class ReviewService extends TmdbAPI {
+public interface ReviewService {
 
     /**
      * Get a review by id.

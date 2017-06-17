@@ -1,5 +1,7 @@
 package com.lpsmin.onemovie.services;
 
+import com.lpsmin.onemovie.model.MovieResults;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -8,7 +10,7 @@ import retrofit2.http.Query;
  * Created by younes on 16/06/2017.
  */
 
-public class SearchService extends TmdbAPI {
+public interface SearchService {
 
     /**
      * Search for movies.
@@ -25,7 +27,7 @@ public class SearchService extends TmdbAPI {
      * those wanting more of an "autocomplete" type search, set this option to 'ngram'.
      */
     @GET("search/movie")
-    Call<MovieResults> movie(
+    Call<MovieResults> searchMovie(
         @Query("query") String query,
         @Query("page") Integer page,
         @Query("language") String language,

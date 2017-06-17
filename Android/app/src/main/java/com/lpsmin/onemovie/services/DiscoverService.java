@@ -1,17 +1,23 @@
 package com.lpsmin.onemovie.services;
 
+import com.lpsmin.onemovie.model.MovieResults;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
+
 /**
  * Created by younes on 16/06/2017.
  */
 
-public class DiscoverService extends TmdbAPI {
+public interface DiscoverService {
 
     /**
      * Discover movies by different types of data
      * like average rating, number of votes, genres and certifications.
      */
     @GET("discover/movie")
-    Call<MovieResultsPage> discoverMovie(
+    Call<MovieResults> discoverMovie(
         @Query("language") String language,
         @Query("region") String region,
         @Query("sort_by") SortBy sort_by,

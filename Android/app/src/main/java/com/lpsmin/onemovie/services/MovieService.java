@@ -1,5 +1,10 @@
 package com.lpsmin.onemovie.services;
 
+import com.lpsmin.onemovie.model.Credits;
+import com.lpsmin.onemovie.model.Movie;
+import com.lpsmin.onemovie.model.MovieResults;
+import com.lpsmin.onemovie.model.ReviewResults;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -9,7 +14,7 @@ import retrofit2.http.Query;
  * Created by younes on 16/06/2017.
  */
 
-public class MovieService extends TmdbAPI {
+public interface MovieService {
 
     /**
      * Get the basic movie information for a specific movie id.
