@@ -1,4 +1,4 @@
-package com.lpsmin.myapplication.services;
+package com.lpsmin.onemovie.services;
 
 /**
  * Created by younes on 16/06/2017.

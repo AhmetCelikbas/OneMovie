@@ -1,4 +1,4 @@
-package com.lpsmin.myapplication;
+package com.lpsmin.onemovie;
 
 import org.junit.Test;
 

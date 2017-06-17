@@ -1,4 +1,4 @@
-package com.lpsmin.myapplication;
+package com.lpsmin.onemovie;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
