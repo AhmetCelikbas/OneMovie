@@ -1,9 +1,11 @@
 package com.lpsmin.onemovie.services;
 
+import com.lpsmin.onemovie.model.AppendToResponse;
 import com.lpsmin.onemovie.model.Credits;
 import com.lpsmin.onemovie.model.Movie;
 import com.lpsmin.onemovie.model.MovieResults;
 import com.lpsmin.onemovie.model.ReviewResults;
+import com.lpsmin.onemovie.model.Videos;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -144,20 +146,6 @@ public interface MovieService {
      */
     @GET("movie/{movie_id}/recommendations")
     Call<MovieResults> recommendations(
-            @Path("movie_id") int movie_id,
-            @Query("page") Integer page,
-            @Query("language") String language
-    );
-
-    /**
-     * Get the lists that the movie belongs to.
-     *
-     * @param movie_id
-     * @param page Optional. Minimum value is 1, expected value is an integer.
-     * @param language Optional. ISO 639-1 code.
-     */
-    @GET("movie/{movie_id}/lists")
-    Call<ListResults> lists(
             @Path("movie_id") int movie_id,
             @Query("page") Integer page,
             @Query("language") String language

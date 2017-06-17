@@ -1,6 +1,9 @@
 package com.lpsmin.onemovie.services;
 
+import com.lpsmin.onemovie.enumerations.SortBy;
+import com.lpsmin.onemovie.model.DiscoverFilter;
 import com.lpsmin.onemovie.model.MovieResults;
+import com.lpsmin.onemovie.model.TmdbDate;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
