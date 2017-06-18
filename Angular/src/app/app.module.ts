@@ -12,6 +12,21 @@ import { AppRoutingModule } from './app-routing.module';
 import 'hammerjs';
 
 import { ConfigService } from './services/config.service';
+import { DataService } from './services/data.service';
+
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
+declare var Hammer: any;
+
+export class curstomHammerConfig extends HammerGestureConfig {
+    buildHammer(element: HTMLElement) {
+        let mc = new Hammer(element, {
+            touchAction: "pan-y",
+        });
+        return mc;
+    }
+}
+
 
 @NgModule({
   declarations: [
@@ -27,6 +42,8 @@ import { ConfigService } from './services/config.service';
   ],
   providers: [
     ConfigService,
+    DataService,
+    { provide: HAMMER_GESTURE_CONFIG, useClass: curstomHammerConfig }
   ],
   bootstrap: [AppComponent]
 })
