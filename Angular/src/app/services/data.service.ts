@@ -15,10 +15,14 @@ export class DataService {
 
 
   getNowPlaying(page: number) {
-      return this.http.get(`${this.config.url_movie}now_playing?api_key=${this.config.api_key}&language=${this.config.language}&page=${page}`)
-          .map((res: Response) => res.json())
+    return this.http.get(`${this.config.url_movie}now_playing?api_key=${this.config.api_key}&language=${this.config.language}&page=${page}`)
+        .map((res: Response) => res.json())
   }
 
+  getSearchMovie(name: string, page: number) {
+    return this.http.get(`${this.config.url_search}?api_key=${this.config.api_key}&language=en&query=${name}&page=${page}`)
+        .map(res => res.json())
+  }
 
 
 }

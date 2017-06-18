@@ -9,6 +9,8 @@ const routes: Routes = [
 		children: [
 			{ path: '', loadChildren: './home/home.module#HomeModule'},
 			{ path: 'home', loadChildren: './home/home.module#HomeModule'},
+			{ path: 'home', loadChildren: './home/home.module#HomeModule'},
+			{ path: 'search/:searchQuery', loadChildren: './search/search.module#SearchModule'},
 			{ path: '**', component: PageNotFoundComponent }
 		]
 	}

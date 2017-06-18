@@ -1,0 +1,47 @@
+
+
+<div (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+
+<div id="searchResults">
+  <h6>Résultats de la recherche pour :</h6>
+  <h1>{{searchQuery}}</h1>
+
+</div>
+
+<div *ngIf="!movies" style="text-align:center;">
+  <br /><i class="fa fa-spinner fa-spin" aria-hidden="true"></i><br />Chargement ...
+</div>
+
+<!-- Movies list -->
+<div class="items" *ngIf="movies">
+  <div class="item" *ngFor="let movie of movies.results">
+    <a [routerLink]="['/movie', movie.id]">
+      <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="poster movie" width="200">
+      <img *ngIf="!movie.poster_path" src="http://ddbu.billiardport.com/img/posters/no_poster_available.jpg" alt="No poster available"
+        width="200">
+      <h4>{{movie.title}}</h4>
+    </a>
+  </div>
+</div>
+
+<!-- pagination -->
+<div *ngIf="movies" class="pagination">
+  <ul>
+    <li [ngClass]="{disabled:currentPage === 1}">
+      <a (click)="setPage(1)"><i class="fa fa-fast-backward" aria-hidden="true"></i></a>
+    </li>
+    <li [ngClass]="{disabled:currentPage === 1}">
+      <a (click)="setPage(currentPage - 1)"><i class="fa fa-step-backward" aria-hidden="true"></i></a>
+    </li>
+    <li>
+      {{ currentPage }} / {{totalPages}}
+    </li>
+    <li [ngClass]="{disabled:currentPage === totalPages}">
+      <a (click)="setPage(currentPage + 1)"><i class="fa fa-step-forward" aria-hidden="true"></i></a>
+    </li>
+    <li [ngClass]="{disabled:currentPage === totalPages}">
+      <a (click)="setPage(totalPages)"><i class="fa fa-fast-forward" aria-hidden="true"></i></a>
+    </li>
+  </ul>
+</div>
+</div>
