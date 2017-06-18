@@ -7,14 +7,14 @@ $fa-font-path: "../../node_modules/font-awesome/fonts";
 $bg-color : #191C1F;
 
 html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   height: 100%;
   background-color: $bg-color;
   color: #FFF;
-}
-
-.container {
-  background-color: $bg-color;
-  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
 }
 
 .mat-sidenav-content {
@@ -26,4 +26,61 @@ html, body {
 
 .spacer {
   flex: 1 1 auto;
+}
+
+
+
+/* REPONSIVE */
+.desktop { display: none; }
+
+@media screen and (min-width: 410) {
+  .mobile { display: initial; }
+}
+@media (min-width: 620px) {
+  .mobile { display: initial; }
+}
+@media (min-width: 830px) {
+  .mobile { display: none; }
+  .desktop { display: initial; }
+}
+@media (min-width: 1040px) {
+  .mobile { display: none; }
+  .desktop { display: initial; }
+}
+@media (min-width: 1250px) {
+  .mobile { display: none; }
+  .desktop { display: initial; }
+}
+@media (min-width: 1460px) {
+  .mobile { display: none; }
+  .desktop { display: initial; }
+}
+@media (min-width: 1670px) {
+  .mobile { display: none; }
+  .desktop { display: initial; }
+}
+
+
+
+
+/* Pagination */
+.pagination {
+  display: initial;
+  text-align: center;
+  ul {
+    -webkit-padding-start: 0;
+  }
+  li {
+    a {
+      cursor: pointer;
+    }
+    
+    display: inline-block;
+    padding: 0 .5rem;
+  }
+  .disabled a {
+    cursor: default;
+    pointer-events: none;
+    color: #3C3C3C;
+  }
 }

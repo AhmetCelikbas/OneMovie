@@ -3,7 +3,8 @@
     <span class="spacer"></span>
     <a class="title" routerLink="/home">OneMovie</a>
     <span class="spacer"></span>
-    <a class="topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+    <a class="desktop topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+    <a class="mobile topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
 </md-toolbar>
 
 
@@ -18,15 +19,13 @@
         <button type="submit" [disabled]="!seachForm.form.valid" hidden></button>
     </form>
 
-    <a (click)="sidenav.toggle()" class="sidenav-button">En salle</a>
+    <a (click)="sidenav.toggle()" routerLink="/home" class="sidenav-button">En salle</a>
     <a (click)="sidenav.toggle()" class="sidenav-button">Populaire</a>
     <a (click)="sidenav.toggle()" class="sidenav-button">Meilleurs cote</a>
     <a (click)="sidenav.toggle()" class="sidenav-button">Prochainement</a>
     <a (click)="sidenav.toggle()" class="sidenav-button">Listes</a>
+    <a (click)="sidenav.toggle()" class="sidenav-button">À propos</a>
 
   </md-sidenav>
-
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
 </md-sidenav-container>
