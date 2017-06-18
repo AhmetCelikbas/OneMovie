@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,18 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   searchQuery: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  // onKey(event: any) {
-  //   this.searchQuery = event.target.value;
-  //   console.log(this.searchQuery);
-  // }
-
   search() {
-    console.log(this.searchQuery);
+    if (this.searchQuery === '') {
+        this.router.navigate(['/index']);
+    } else {
+        this.router.navigate(['/search', this.searchQuery]);
+    }
+    this.searchQuery = '';
   }
 
 }
