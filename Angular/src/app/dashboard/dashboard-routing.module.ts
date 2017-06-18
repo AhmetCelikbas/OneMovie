@@ -12,6 +12,7 @@ const routes: Routes = [
 			{ path: 'upcoming', loadChildren: './upcoming/upcoming.module#UpcomingModule'},
 			{ path: 'trending', loadChildren: './trending/trending.module#TrendingModule'},
 			{ path: 'top-rated', loadChildren: './top-rated/top-rated.module#TopRatedModule'},
+			{ path: 'sign-in', loadChildren: './sign-in/sign-in.module#SignInModule'},
 			{ path: 'search/:searchQuery', loadChildren: './search/search.module#SearchModule'},
 			{ path: '**', component: PageNotFoundComponent }
 		]

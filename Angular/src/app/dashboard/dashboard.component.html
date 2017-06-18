@@ -3,8 +3,11 @@
     <span class="spacer"></span>
     <a class="title" routerLink="/home">OneMovie</a>
     <span class="spacer"></span>
-    <a class="desktop topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
-    <a class="mobile topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+    <a *ngIf="!authentication.isAuthenticated" class="desktop topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+    <a *ngIf="!authentication.isAuthenticated" class="mobile topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+
+    <a *ngIf="authentication.isAuthenticated" class="desktop topnav-button" routerLink="/sign-in"><i class="fa fa-user-o" aria-hidden="true"></i> {{authentication.userData['username']}}</a>
+    <a *ngIf="authentication.isAuthenticated" class="mobile topnav-button" routerLink="/sign-in"><i class="fa fa-user-o" aria-hidden="true"></i></a>
 </md-toolbar>
 
 

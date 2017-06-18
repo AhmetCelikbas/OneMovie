@@ -13,6 +13,7 @@ import 'hammerjs';
 
 import { ConfigService } from './services/config.service';
 import { DataService } from './services/data.service';
+import { AuthenticationService } from './services/authentication.service';
 
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
@@ -43,6 +44,7 @@ export class curstomHammerConfig extends HammerGestureConfig {
   providers: [
     ConfigService,
     DataService,
+    AuthenticationService,
     { provide: HAMMER_GESTURE_CONFIG, useClass: curstomHammerConfig }
   ],
   bootstrap: [AppComponent]

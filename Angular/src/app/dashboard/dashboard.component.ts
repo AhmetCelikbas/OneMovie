@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   searchQuery: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authentication: AuthenticationService) { }
 
   ngOnInit() {
   }
