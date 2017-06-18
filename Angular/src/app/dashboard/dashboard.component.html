@@ -14,15 +14,15 @@
     <form class="form-inline" #seachForm="ngForm" role="form" (submit)="search(); sidenav.toggle()">
         <div class="input-group">
             <span class="searchIcon input-group-addon" id="search"><i class="fa fa-search" aria-hidden="true"></i></span>
-            <input type="text" required class="search form-control" placeholder="Rechercher un film, une série ..." aria-describedby="search" name="search" [(ngModel)]="searchQuery">
+            <input type="text" required class="search form-control" placeholder="Rechercher un film ..." aria-describedby="search" name="search" [(ngModel)]="searchQuery">
         </div>
         <button type="submit" [disabled]="!seachForm.form.valid" hidden></button>
     </form>
 
     <a (click)="sidenav.toggle()" routerLink="/home" class="sidenav-button">En salles</a>
-    <a (click)="sidenav.toggle()" class="sidenav-button">Populaire</a>
+    <a (click)="sidenav.toggle()" routerLink="/trending" class="sidenav-button">Populaire</a>
     <a (click)="sidenav.toggle()" class="sidenav-button">Meilleurs cote</a>
-    <a (click)="sidenav.toggle()" class="sidenav-button">Prochainement</a>
+    <a (click)="sidenav.toggle()" routerLink="/upcoming" class="sidenav-button">Prochainement</a>
     <a (click)="sidenav.toggle()" class="sidenav-button">Listes</a>
     <a (click)="sidenav.toggle()" class="sidenav-button">À propos</a>
 

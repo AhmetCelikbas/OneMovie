@@ -16,12 +16,22 @@ export class DataService {
 
   getNowPlaying(page: number) {
     return this.http.get(`${this.config.url_movie}now_playing?api_key=${this.config.api_key}&language=${this.config.language}&page=${page}`)
-        .map((res: Response) => res.json())
+        .map((res: Response) => res.json());
   }
 
   getSearchMovie(name: string, page: number) {
-    return this.http.get(`${this.config.url_search}?api_key=${this.config.api_key}&language=en&query=${name}&page=${page}`)
-        .map(res => res.json())
+    return this.http.get(`${this.config.url_search}?api_key=${this.config.api_key}&language=${this.config.language}&query=${name}&page=${page}`)
+        .map(res => res.json());
+  }
+
+  getUpComing(page: number) {
+    return this.http.get(`${this.config.url_movie}upcoming?api_key=${this.config.api_key}&language=${this.config.language}&page=${page}`)
+        .map((res: Response) => res.json());
+  }
+
+  getMovieDiscover(page: number) {
+    return this.http.get(`${this.config.url_discover}?api_key=${this.config.api_key}&language=${this.config.language}&sort_by=popularity.desc&page=${page}`)
+        .map((res: Response) => res.json())
   }
 
 

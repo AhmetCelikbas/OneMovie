@@ -1,5 +1,5 @@
 <div id="pageTitle">
-  <h2>Films actuellement en salles</h2>
+  <h2>Films prochainement en salles</h2>
 </div>
 <div (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
 <div *ngIf="!movies" style="text-align:center;">
@@ -14,6 +14,7 @@
       <img *ngIf="!movie.poster_path" src="http://ddbu.billiardport.com/img/posters/no_poster_available.jpg" alt="No poster available"
         width="200">
       <h4>{{movie.title}}</h4>
+      <p class="date">{{movie.release_date | date : "dd.MMM.y"}}</p>
     </a>
   </div>
 </div>
