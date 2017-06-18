@@ -11,6 +11,7 @@ const routes: Routes = [
 			{ path: 'home', loadChildren: './home/home.module#HomeModule'},
 			{ path: 'upcoming', loadChildren: './upcoming/upcoming.module#UpcomingModule'},
 			{ path: 'trending', loadChildren: './trending/trending.module#TrendingModule'},
+			{ path: 'top-rated', loadChildren: './top-rated/top-rated.module#TopRatedModule'},
 			{ path: 'search/:searchQuery', loadChildren: './search/search.module#SearchModule'},
 			{ path: '**', component: PageNotFoundComponent }
 		]

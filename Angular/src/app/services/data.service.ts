@@ -34,5 +34,9 @@ export class DataService {
         .map((res: Response) => res.json())
   }
 
+  getTopRated(page: number) {
+    return this.http.get(`${this.config.url_movie}top_rated?api_key=${this.config.api_key}&language=${this.config.language}&page=${page}`)
+        .map((res: Response) => res.json())
+  }
 
 }
