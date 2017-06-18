@@ -20,7 +20,12 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.data.getNowPlaying(this.currentPage).subscribe(response => {
+        this.loadResults();
+    }
+
+
+    loadResults() {
+       this.data.getNowPlaying(this.currentPage).subscribe(response => {
             this.totalPages = response['total_pages'];
             this.movies = response;
         });
@@ -32,7 +37,7 @@ export class HomeComponent implements OnInit {
         }
         this.movies = null;
         this.currentPage = page;
-        this.data.getNowPlaying(this.currentPage).subscribe(response => this.movies = response);
+        this.loadResults();
     }
 
     // action triggered when user swipes
