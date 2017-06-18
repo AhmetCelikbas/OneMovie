@@ -28,8 +28,6 @@ html, body {
   flex: 1 1 auto;
 }
 
-
-
 /* REPONSIVE */
 .desktop { display: none; }
 
@@ -60,6 +58,11 @@ html, body {
   .desktop { display: initial; }
 }
 
+
+#pageTitle {
+    padding: 40px;
+    text-align: center;
+}
 
 /* MOVIES */
 .items {

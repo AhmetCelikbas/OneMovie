@@ -41,7 +41,8 @@ export class SearchComponent implements OnInit {
               this.totalPages = data['total_pages'];
             }
           } else {
-            this.movies = null;
+            this.movies = {};
+            this.totalPages = 0;
           }
         });
     }

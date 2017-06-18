@@ -2,15 +2,19 @@
 
 <div (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
 
-<div id="searchResults">
+<div id="pageTitle">
   <h6>Résultats de la recherche pour :</h6>
   <h1>{{searchQuery}}</h1>
-
 </div>
 
 <div *ngIf="!movies" style="text-align:center;">
   <br /><i class="fa fa-spinner fa-spin" aria-hidden="true"></i><br />Chargement ...
 </div>
+
+<div *ngIf="totalPages === 0" style="text-align:center;">
+  <br /><i class="fa fa-sad fa-spin" aria-hidden="true"></i><br /> Aucun résultat ne correspond à votre requête.
+</div>
+
 
 <!-- Movies list -->
 <div class="items" *ngIf="movies">
@@ -25,7 +29,7 @@
 </div>
 
 <!-- pagination -->
-<div *ngIf="movies" class="pagination">
+<div *ngIf="movies && totalPages != 0" class="pagination">
   <ul>
     <li [ngClass]="{disabled:currentPage === 1}">
       <a (click)="setPage(1)"><i class="fa fa-fast-backward" aria-hidden="true"></i></a>
