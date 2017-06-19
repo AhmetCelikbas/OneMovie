@@ -39,14 +39,12 @@
   </div>
   <div class="items" *ngIf="cast">
     <div class="card item" *ngFor="let person of cast">
-      <a [routerLink]="['/star', person.id]">
         <img class="starPicture" src="https://image.tmdb.org/t/p/w185/{{person.profile_path}}" alt="profile">
 
         <div class="card-block">
           <h3>{{person.name}}</h3>
           <p class="card-text">Rôle : {{person.character}}</p>
         </div>
-      </a>
     </div>
   </div>
 </div>
@@ -66,16 +64,3 @@
     </div>
   </div>
 </div>
-
-
-<!--
-<section id="similar" class="items" *ngIf="similarMovies">
-  <h1>Similar movies</h1>
-  <div class="item" *ngFor="let movie of similarMovies">
-    <a [routerLink]="['/movie', movie.id]">
-      <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}" alt="poster movie">
-      <img *ngIf="!movie.poster_path" src="http://ddbu.billiardport.com/img/posters/no_poster_available.jpg" alt="No poster available">
-      <p>{{movie.title}}</p>
-    </a>
-  </div>
-</section>-->
