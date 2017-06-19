@@ -8,5 +8,6 @@ target 'OneMovie' do
   # Pods for OneMovie
 
 pod "TMDBSwift"
+pod "SWRevealViewController"
 
 end

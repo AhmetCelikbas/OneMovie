@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C1153DAEA8D68403608BFCE49BA6C642'
-               BlueprintName = 'TMDBSwift'
+               BlueprintIdentifier = '6F8C6D8E3025FD1B68AF1944D4C02709'
+               BlueprintName = 'SWRevealViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'TMDBSwift.framework'>
+               BuildableName = 'SWRevealViewController.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

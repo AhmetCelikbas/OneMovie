@@ -1,12 +1,15 @@
 PODS:
+  - SWRevealViewController (2.3.0)
   - TMDBSwift (0.3.0)
 
 DEPENDENCIES:
+  - SWRevealViewController
   - TMDBSwift
 
 SPEC CHECKSUMS:
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TMDBSwift: 47fe9253d0b9bbad8120a6378da2162c8d428bab
 
-PODFILE CHECKSUM: d7f65f62b9ad2b77fa95e7a88ed9b52a0025053e
+PODFILE CHECKSUM: 2c038436a6b357e3a99bc5292128c902ed65aa5b
 
 COCOAPODS: 1.2.1
