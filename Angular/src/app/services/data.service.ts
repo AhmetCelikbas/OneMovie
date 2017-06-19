@@ -73,7 +73,7 @@ export class DataService {
       this.config.url_account + this.authentication.userData['id'] + 
       '/favorite/movies?api_key=' + this.config.api_key + '&language=' + this.config.language +
       '&session_id=' + window.localStorage.getItem('session_id') + '&page=' + page)
-          .map((res: Response) => res.json().results );
+          .map((res: Response) => res.json() );
   }
 
 
@@ -115,7 +115,7 @@ export class DataService {
       this.config.url_account + this.authentication.userData['id'] + 
       '/watchlist/movies?api_key=' + this.config.api_key + '&language=' + this.config.language +
       '&session_id=' + window.localStorage.getItem('session_id') + '&page=' + page)
-          .map((res: Response) => res.json().results );
+          .map((res: Response) => res.json() );
   }
 
 

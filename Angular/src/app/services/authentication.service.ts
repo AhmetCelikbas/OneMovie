@@ -86,7 +86,7 @@ export class AuthenticationService {
   }
 
 
-  private getUserData() { // this method also check the user authentication
+  getUserData() { // this method also check the user authentication
     
       return new Promise((resolve) => {
         this.http.get(this.config.url_userData + '?api_key=' + this.config.api_key + 
