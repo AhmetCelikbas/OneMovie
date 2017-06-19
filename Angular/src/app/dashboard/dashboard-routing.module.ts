@@ -15,6 +15,7 @@ const routes: Routes = [
 			{ path: 'sign-in', loadChildren: './sign-in/sign-in.module#SignInModule'},
 			{ path: 'account', loadChildren: './account/account.module#AccountModule'},
 			{ path: 'search/:searchQuery', loadChildren: './search/search.module#SearchModule'},
+			{ path: 'movie/:id', loadChildren: './movie/movie.module#MovieModule' },
 			{ path: '**', component: PageNotFoundComponent }
 		]
 	}

@@ -9,7 +9,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class AccountComponent implements OnInit {
 
-  constructor(private router: Router, private authentication: AuthenticationService) { }
+  constructor(private router: Router, public authentication: AuthenticationService) { }
 
   ngOnInit() {
   }

@@ -3,6 +3,8 @@
 $fa-font-path: "../../node_modules/font-awesome/fonts";
 @import "../../node_modules/font-awesome/scss/font-awesome.scss";
 @import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import "../../node_modules/angular2-toaster/toaster.css";
+
 
 $bg-color : #191C1F;
 
@@ -26,6 +28,12 @@ html, body {
 
 .spacer {
   flex: 1 1 auto;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #FF424F;
 }
 
 /* REPONSIVE */

@@ -10,12 +10,15 @@ export class ConfigService {
     url_movie = 'https://api.themoviedb.org/3/movie/';
     url_person = 'https://api.themoviedb.org/3/person/';
     url_genre = 'https://api.themoviedb.org/3/genre/';
+    url_account = 'https://api.themoviedb.org/3/account/';
 
     url_requestToken = 'https://api.themoviedb.org/3/authentication/token/new';
     url_validateRequestToken = 'https://api.themoviedb.org/3/authentication/token/validate_with_login';
     url_createSession = 'https://api.themoviedb.org/3/authentication/session/new';
     url_userData = 'https://api.themoviedb.org/3/account';
 
+
+    Youtube_baseUrl = 'https://www.youtube.com/embed/';
   constructor() { }
 
 }
