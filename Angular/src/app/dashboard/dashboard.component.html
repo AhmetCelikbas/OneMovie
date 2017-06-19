@@ -28,7 +28,7 @@
     <a (click)="sidenav.toggle()" routerLink="/upcoming" class="sidenav-button">Prochainement</a>
     <a (click)="sidenav.toggle()" *ngIf="authentication.isAuthenticated" routerLink="/favorites" class="sidenav-button">Favoris</a>
     <a (click)="sidenav.toggle()" *ngIf="authentication.isAuthenticated" routerLink="/watchlist" class="sidenav-button">À regarder plus tard</a>
-    <a (click)="sidenav.toggle()" class="sidenav-button">À propos</a>
+    <a (click)="sidenav.toggle()" class="sidenav-button" routerLink="/about">À propos</a>
 
   </md-sidenav>
   <router-outlet></router-outlet>
