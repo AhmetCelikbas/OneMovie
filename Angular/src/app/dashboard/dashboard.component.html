@@ -6,8 +6,8 @@
     <a *ngIf="!authentication.isAuthenticated" class="desktop topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
     <a *ngIf="!authentication.isAuthenticated" class="mobile topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
 
-    <a *ngIf="authentication.isAuthenticated" class="desktop topnav-button" routerLink="/sign-in"><i class="fa fa-user-o" aria-hidden="true"></i> {{authentication.userData['username']}}</a>
-    <a *ngIf="authentication.isAuthenticated" class="mobile topnav-button" routerLink="/sign-in"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+    <a *ngIf="authentication.isAuthenticated" class="desktop topnav-button" routerLink="/account"><i class="fa fa-user-o" aria-hidden="true"></i> {{authentication.userData['username']}}</a>
+    <a *ngIf="authentication.isAuthenticated" class="mobile topnav-button" routerLink="/account"><i class="fa fa-user-o" aria-hidden="true"></i></a>
 </md-toolbar>
 
 
@@ -26,7 +26,7 @@
     <a (click)="sidenav.toggle()" routerLink="/trending" class="sidenav-button">Populaire</a>
     <a (click)="sidenav.toggle()" routerLink="/top-rated" class="sidenav-button">Meilleurs notes</a>
     <a (click)="sidenav.toggle()" routerLink="/upcoming" class="sidenav-button">Prochainement</a>
-    <a (click)="sidenav.toggle()" class="sidenav-button">Listes</a>
+    <a (click)="sidenav.toggle()" *ngIf="authentication.isAuthenticated" class="sidenav-button">Listes</a>
     <a (click)="sidenav.toggle()" class="sidenav-button">À propos</a>
 
   </md-sidenav>

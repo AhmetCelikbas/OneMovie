@@ -27,7 +27,6 @@ export class SignInComponent implements OnInit {
     this.loginAttemptFinished = false;
     this.authentication.authenticate(this.usercreds).then((isAuthenticated) => {
       if (isAuthenticated) {
-        // console.log(this.authentication.isAuthenticated);
         this.errorMsg = '';
         this.router.navigate(['/home']);
       } else {

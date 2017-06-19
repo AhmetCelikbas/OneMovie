@@ -13,6 +13,7 @@ const routes: Routes = [
 			{ path: 'trending', loadChildren: './trending/trending.module#TrendingModule'},
 			{ path: 'top-rated', loadChildren: './top-rated/top-rated.module#TopRatedModule'},
 			{ path: 'sign-in', loadChildren: './sign-in/sign-in.module#SignInModule'},
+			{ path: 'account', loadChildren: './account/account.module#AccountModule'},
 			{ path: 'search/:searchQuery', loadChildren: './search/search.module#SearchModule'},
 			{ path: '**', component: PageNotFoundComponent }
 		]

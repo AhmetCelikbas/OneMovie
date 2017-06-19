@@ -1,0 +1,21 @@
+<div *ngIf="!authentication.isAuthenticated">
+  <div id="pageTitle">
+    <a class="btn btn-primary" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+  </div>
+</div>
+<div *ngIf="authentication.isAuthenticated">
+  <div id="pageTitle">
+    <h2>Bonjour {{authentication['userData']['username']}}</h2>
+  </div>
+  <div class="row" style="margin: 0 auto;">
+      <img class="img-responsive" style="margin: 0 auto;" src="https://www.gravatar.com/avatar/{{authentication['userData']['avatar']['gravatar']['hash']}}?s=300" width="300px" alt="Avatar">
+  </div>
+  <br />
+  
+  <div class="row" >
+    <div style="margin: 0 auto;">
+      <a class="btn btn-primary" href="https://www.themoviedb.org/settings/profile" target="blank"><i class="fa fa-sign-in" aria-hidden="true"></i> Editer</a> 
+      <a class="btn btn-danger" href="#" (click)="logout()"><i class="fa fa-sign-in" aria-hidden="true"></i> Deconnexion</a>
+    </div>
+  </div>
+</div>
