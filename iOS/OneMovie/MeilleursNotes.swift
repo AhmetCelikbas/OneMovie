@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import SWRevealViewController
 
-class ViewController: UIViewController {
+class MeilleursNotes: UIViewController {
+
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+
     }
 
     override func didReceiveMemoryWarning() {
