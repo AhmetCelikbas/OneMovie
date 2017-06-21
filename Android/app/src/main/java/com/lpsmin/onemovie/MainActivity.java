@@ -1,8 +1,10 @@
 package com.lpsmin.onemovie;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,25 +14,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import com.lpsmin.onemovie.fragment.MovieFragment;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,8 +35,14 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
 
+        Bundle args = new Bundle();
+        args.putString("param_nav", "in_theaters");
+        Fragment fragment = new MovieFragment();
+        fragment.setArguments(args);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.content_main, fragment).commit();
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -51,14 +52,13 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu,
+        // adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -67,7 +67,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_search) {
+            Intent intent = new Intent(this, DetailActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -80,20 +82,55 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_in_theaters) {
-            // Handle the camera action
-        } else if (id == R.id.nav_popular) {
+        // Create and setup bundle args
+        Bundle args = new Bundle();
+        Fragment fragment = null;
 
-        } else if (id == R.id.nav_top_rated) {
+        switch (id) {
+            case R.id.nav_in_theaters:
+                fragment = new MovieFragment();
+                args.putString("nav_param", "in_theaters");
+                break;
+            case R.id.nav_popular:
+                fragment = new MovieFragment();
+                args.putString("nav_param", "popular");
+                break;
+            case R.id.nav_top_rated:
+                fragment = new MovieFragment();
+                args.putString("nav_param", "top_rated");
+                break;
+            case R.id.nav_upcoming:
+                fragment = new MovieFragment();
+                args.putString("nav_param", "upcoming");
+                break;
+            case R.id.nav_favorites:
+                args.putString("nav_param", "favorites");
+                Toast.makeText(this, "Fonctionnalité à venir", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_to_watch:
+                args.putString("nav_param", "to_watch");
+                Toast.makeText(this, "Fonctionnalité à venir", Toast.LENGTH_SHORT).show();
+                break;
+            /*
+            case R.id.nav_logout:
+                args.putString("item_type", "Logout");
+                Toast.makeText(this, "Authentification à venir", Toast.LENGTH_SHORT).show();
+                break;
+            */
+            case R.id.nav_about:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                View view = getLayoutInflater().inflate(R.layout.dialog_about, null);
+                builder.setView(view);
+                builder.show();
+                break;
+        }
 
-        } else if (id == R.id.nav_upcoming) {
-
-        } else if (id == R.id.nav_list) {
-
-        } else if (id == R.id.nav_logout) {
-
-        } else if (id == R.id.nav_about) {
-
+        if (fragment != null) {
+            args.putString("title", item.getTitle().toString());
+            fragment.setArguments(args);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_main, fragment);
+            ft.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

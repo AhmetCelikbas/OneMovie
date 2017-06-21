@@ -39,6 +39,33 @@ public class Movie {
     private Double vote_average;
     private Integer vote_count;
 
+    public Movie(Integer id, Boolean adult, String backdrop_path, Collection belongs_to_collection, Integer budget, List<Genre> genres, String homepage, String imdb_id, String original_title, String original_language, String overview, Double popularity, String poster_path, List<ProductionCompany> production_companies, List<ProductionCountry> production_countries, Date release_date, Integer revenue, Integer runtime, List<SpokenLanguage> spoken_languages, Status status, String tagline, String title, Boolean video, Double vote_average, Integer vote_count) {
+        this.id = id;
+        this.adult = adult;
+        this.backdrop_path = backdrop_path;
+        this.belongs_to_collection = belongs_to_collection;
+        this.budget = budget;
+        this.genres = genres;
+        this.homepage = homepage;
+        this.imdb_id = imdb_id;
+        this.original_title = original_title;
+        this.original_language = original_language;
+        this.overview = overview;
+        this.popularity = popularity;
+        this.poster_path = poster_path;
+        this.production_companies = production_companies;
+        this.production_countries = production_countries;
+        this.release_date = release_date;
+        this.revenue = revenue;
+        this.runtime = runtime;
+        this.spoken_languages = spoken_languages;
+        this.status = status;
+        this.tagline = tagline;
+        this.title = title;
+        this.video = video;
+        this.vote_average = vote_average;
+        this.vote_count = vote_count;
+    }
 
     // ACCESSORS AND MUTATORS:
 

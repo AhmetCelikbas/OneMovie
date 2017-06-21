@@ -5,4 +5,23 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">200dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <!-- General Margin/Padding -->
+    <dimen name="dist_small">4dp</dimen>
+    <dimen name="dist_medium">8dp</dimen>
+    <dimen name="dist_large">16dp</dimen>
+
+    <!-- General Text Sizes -->
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+
+    <!-- Movie List Item -->
+    <dimen name="movie_list_img_size">140dp</dimen>
+    <dimen name="movie_list_content_marginX">12dp</dimen>
+    <dimen name="movie_list_content_marginY">4dp</dimen>
+    <dimen name="movie_list_text_margin">12dp</dimen>
+    <dimen name="movie_list_rating_ic_size">14dp</dimen>
+    <dimen name="movie_list_rating_margin">6dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
 </resources>

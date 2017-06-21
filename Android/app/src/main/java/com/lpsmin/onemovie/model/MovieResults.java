@@ -10,14 +10,14 @@ public class MovieResults extends ResultsPage {
 
     // PROPERTIES:
 
-    private List<Movie> movies;
+    private List<Movie> results;
 
 
-    public List<Movie> getMovies() {
-        return movies;
+    public List<Movie> getResults() {
+        return results;
     }
 
-    public void setMovies(List<Movie> movies) {
-        this.movies = movies;
+    public void setResults(List<Movie> movies) {
+        this.results = movies;
     }
 }

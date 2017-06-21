@@ -11,7 +11,7 @@ public class ReviewResults extends ResultsPage {
     // PROPERTIES:
 
     private Integer id;
-    private List<Review> reviews;
+    private List<Review> results;
 
 
     // ACCESSORS AND MUTATORS
@@ -25,10 +25,10 @@ public class ReviewResults extends ResultsPage {
     }
 
     public List<Review> getReviews() {
-        return reviews;
+        return results;
     }
 
     public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
+        this.results = reviews;
     }
 }

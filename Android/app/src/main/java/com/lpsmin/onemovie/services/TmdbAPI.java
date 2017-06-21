@@ -18,23 +18,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by younes on 16/06/2017.
  */
 
-public class TmdbAPI {
+public final class TmdbAPI {
 
     // PROPERTIES:
-
     public static final String API_HOST = "api.themoviedb.org";
     public static final String API_VERSION = "3";
     public static final String API_URL = "https://" + API_HOST + "/" + API_VERSION + "/";
     public static final String API_KEY = "d8e80ec6dd23ba1687c149969994f760";
-
-    private Retrofit retrofit;
-    private OkHttpClient okHttpClient;
+    private static Retrofit retrofit;
+    private static OkHttpClient okHttpClient;
 
 
     // METHODS:
 
-    protected synchronized OkHttpClient okHttpClient() {
-        if (this.okHttpClient() == null) {
+    protected static synchronized OkHttpClient okHttpClient() {
+        if (okHttpClient == null) {
             OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
             httpClient.addInterceptor(new Interceptor() {
                 @Override
@@ -49,49 +47,49 @@ public class TmdbAPI {
                     return chain.proceed(request);
                 }
             });
-            this.okHttpClient = httpClient.build();
+            okHttpClient = httpClient.build();
         }
 
-        return this.okHttpClient;
+        return okHttpClient;
     }
 
-    protected Retrofit getRetrofit() {
-        if (this.retrofit == null) {
+    protected static Retrofit getRetrofit() {
+        if (retrofit == null) {
             GsonBuilder builder = new GsonBuilder()
                     .setDateFormat("dd/MM/yyyy");
 
-            this.retrofit = new Retrofit.Builder()
-                    .baseUrl(this.API_URL)
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(API_URL)
                     .addConverterFactory(GsonConverterFactory.create(builder.create()))
-                    .client(this.okHttpClient())
+                    .client(okHttpClient())
                     .build();
         }
 
-        return this.retrofit;
+        return retrofit;
     }
 
-    public MovieService moviesService() {
-        return this.getRetrofit().create(MovieService.class);
+    public static MovieService moviesService() {
+        return getRetrofit().create(MovieService.class);
     }
 
-    public PeopleService personService() {
-        return this.getRetrofit().create(PeopleService.class);
+    public static PeopleService personService() {
+        return getRetrofit().create(PeopleService.class);
     }
 
-    public SearchService searchService() {
-        return this.getRetrofit().create(SearchService.class);
+    public static SearchService searchService() {
+        return getRetrofit().create(SearchService.class);
     }
 
-    public GenreService genreService() {
-        return this.getRetrofit().create(GenreService.class);
+    public static GenreService genreService() {
+        return getRetrofit().create(GenreService.class);
     }
 
-    public ReviewService reviewsService() {
-        return this.getRetrofit().create(ReviewService.class);
+    public static ReviewService reviewsService() {
+        return getRetrofit().create(ReviewService.class);
     }
 
-    public DiscoverService discoverService() {
-        return this.getRetrofit().create(DiscoverService.class);
+    public static DiscoverService discoverService() {
+        return getRetrofit().create(DiscoverService.class);
     }
 
 }

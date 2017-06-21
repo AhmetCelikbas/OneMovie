@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">OneMovie</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Ouvrir le volet de navigation</string>
+    <string name="navigation_drawer_close">Fermer le volet</string>
 
+    <!-- RECHERCHE -->
+    <string name="action_search">Rechercher</string>
+    <string name="search_hint">Saisissez un film...</string>
+    <string name="str_no_result">Désolé, il n\'y a aucun résultat trouvé!</string>
+    <string name="title_activity_detail">DetailActivity</string>
     <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_tab">TabActivity</string>
 </resources>

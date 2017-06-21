@@ -15,6 +15,14 @@ public class Collection {
     private List<Parts> parts;
     private String overview;
 
+    public Collection(Integer id, String backdrop_path, String name, String poster_path, List<Parts> parts, String overview) {
+        this.id = id;
+        this.backdrop_path = backdrop_path;
+        this.name = name;
+        this.poster_path = poster_path;
+        this.parts = parts;
+        this.overview = overview;
+    }
 
     public Integer getId() {
         return id;

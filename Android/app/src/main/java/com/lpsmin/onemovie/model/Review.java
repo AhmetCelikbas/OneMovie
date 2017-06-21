@@ -17,6 +17,16 @@ public class Review {
     private String media_type;
     private String url;
 
+    public Review(String id, String author, String content, String iso_639_1, Integer media_id, String media_title, String media_type, String url) {
+        this.id = id;
+        this.author = author;
+        this.content = content;
+        this.iso_639_1 = iso_639_1;
+        this.media_id = media_id;
+        this.media_title = media_title;
+        this.media_type = media_type;
+        this.url = url;
+    }
 
     // ACCESSORS AND MUTATORS:
 

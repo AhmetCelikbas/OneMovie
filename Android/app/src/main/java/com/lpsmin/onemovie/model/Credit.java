@@ -11,6 +11,7 @@ public class Credit {
     private String credit_id;
     private Integer id;
     private String media_type;
+    private String name;
 
     private Boolean adult;
     private String original_title;
@@ -18,6 +19,17 @@ public class Credit {
     private Date release_date;
     private String title;
 
+    public Credit(String credit_id, Integer id, String media_type, String name, Boolean adult, String original_title, String poster_path, Date release_date, String title) {
+        this.credit_id = credit_id;
+        this.id = id;
+        this.media_type = media_type;
+        this.name = name;
+        this.adult = adult;
+        this.original_title = original_title;
+        this.poster_path = poster_path;
+        this.release_date = release_date;
+        this.title = title;
+    }
 
     public String getCredit_id() {
         return credit_id;
@@ -41,6 +53,14 @@ public class Credit {
 
     public void setMedia_type(String media_type) {
         this.media_type = media_type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Boolean getAdult() {
