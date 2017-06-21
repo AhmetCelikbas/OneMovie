@@ -19,17 +19,23 @@
             android:icon="@drawable/ic_access_time"
             android:title="Prochainement" />
         <item
-            android:id="@+id/nav_list"
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/ic_favorite"
+            android:title="Favoris" />
+        <item
+            android:id="@+id/nav_to_watch"
             android:icon="@drawable/ic_playlist_play"
-            android:title="Liste" />
+            android:title="À regarder" />
     </group>
 
     <item android:title="Autre">
         <menu>
+            <!--
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_exit_to_app"
                 android:title="Log out" />
+               -->
             <item
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_info_outline"
