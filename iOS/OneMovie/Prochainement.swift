@@ -83,6 +83,8 @@ class Prochainement: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @IBAction func scrollToTop(_ sender: UIButton) {
         self.MoviesTableView.setContentOffset(CGPoint.zero, animated: true)
+        self.currentPage = 1
+        loadNowPlaying(page: self.currentPage)
     }
     
     func loadNowPlaying(page: Int) {
