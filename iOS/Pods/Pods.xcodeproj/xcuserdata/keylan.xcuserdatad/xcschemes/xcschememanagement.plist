@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>JHSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-OneMovie.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWRevealViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TMDBSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0E9B221384CBE4E042ADD1C27EB02AAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8326B117C0DF3D332AFF946E52EF3116</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC0DE5C7090A89666F8C623E935209B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CCC6497A16F5604F1D009EB0BF84CF79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

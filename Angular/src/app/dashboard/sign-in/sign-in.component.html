@@ -1,0 +1,27 @@
+  <div id="pageTitle">
+    <h2><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<form #signInForm="ngForm" role="form" (submit)="login()">
+				<div class="form-content">
+					<div class="form-group">
+            <input type="text" class="form-control" required name="username" id="inputUsername" placeholder="Nom d'utilisateur (case sensitive)" [(ngModel)]="usercreds.username"/>
+          </div>
+					<div class="form-group">
+						<input type="password" required class="form-control input-underline input-lg" id="password" placeholder="Mot de passe" name="password" [(ngModel)]="usercreds.password"/>
+					</div>
+          <p style="color: red; text-align: center;" *ngIf="errorMsg">{{errorMsg}}</p>
+          <div class="form-group" style="text-align: center;">
+            <button type="submit" *ngIf="loginAttemptFinished" [disabled]="!signInForm.form.valid" class="btn btn-primary" style="width:200px;" > Connexion </button>
+            <button type="submit" *ngIf="!loginAttemptFinished" disabled class="btn btn-primary" style="width:200px;" ><i class="fa fa-spinner fa-spin" aria-hidden="true"></i></button>
+					</div>
+          <div class="form-group" style="text-align: center;">
+            <p>Vous n'avez pas de compte ? <a href="https://www.themoviedb.org/account/signup" target="blank"><i class="fa fa-user-plus" aria-hidden="true"></i> Créer un compte</a></p>
+					</div>
+				</div>
+        
+			</form>
+		</div>		
+	</div>

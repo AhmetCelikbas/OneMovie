@@ -1,0 +1,66 @@
+<toaster-container></toaster-container>
+<div id="movie" *ngIf="movie">
+  <div id="pageTitle">
+    <h1>{{movie.title}}</h1>
+    <ul>
+      <li *ngFor="let genre of movie.genres; let i=index" ><span *ngIf="i < 3"> {{genre.name}}</span></li>
+    </ul>
+    <span *ngIf="movie.vote_average >= 5">{{movie.release_date | date : "dd.MMM.y"}} - {{movie.vote_average}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+    <span *ngIf="movie.vote_average < 5">{{movie.release_date | date : "dd.MMM.y"}} - {{movie.vote_average}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+
+   <div class="padding" [hidden]="!authentication.isAuthenticated">
+      <button class="btn btn-primary btn-sm" (click)="watchlist(movie['id'])">Ajouter dans À regarder plus tard</button> 
+      <button class="btn btn-primary btn-sm" (click)="favorite(movie['id'])">Ajouter aux favoris</button>
+    </div>
+  </div>
+  <div class="container">
+    <img *ngIf="movie.backdrop_path" class="moviePicture" src="https://image.tmdb.org/t/p/w780/{{movie.backdrop_path}}" alt="backdrop movie">
+    <img *ngIf="!movie.backdrop_path && movie.poster_path" class="moviePicture" src="https://image.tmdb.org/t/p/w780/{{movie.poster_path}}" alt="poster movie">
+    <p class="padding">{{movie.overview}}</p>
+  </div>
+</div>
+
+
+<div *ngIf="videos.length > 0">
+  <div id="pageTitle">
+    <h2>Bandes annonces</h2>
+    <ul>
+      <li *ngFor="let video of videos; let i=index"><a (click)="seeTrailer(video.key)">Bande annonce {{i + 1}}</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <iframe *ngIf="url != null" [src]="url" allowfullscreen ></iframe>
+  </div>
+</div>
+
+<div *ngIf="cast.length > 0">
+  <div id="pageTitle">
+    <h2>Casting</h2>
+  </div>
+  <div class="items" *ngIf="cast">
+    <div class="card item" *ngFor="let person of cast">
+        <img class="starPicture" src="https://image.tmdb.org/t/p/w185/{{person.profile_path}}" alt="profile">
+
+        <div class="card-block">
+          <h3>{{person.name}}</h3>
+          <p class="card-text">Rôle : {{person.character}}</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="similarMovies.length > 0">
+  <div id="pageTitle">
+    <h2>Films similaires</h2>
+  </div>
+  <div class="items">
+    <div class="item" *ngFor="let movie of similarMovies">
+      <a [routerLink]="['/movie', movie.id]">
+        <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="poster movie" width="200">
+        <img *ngIf="!movie.poster_path" src="http://ddbu.billiardport.com/img/posters/no_poster_available.jpg" alt="No poster available"
+          width="200">
+        <h4>{{movie.title}}</h4>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,35 @@
-<router-outlet></router-outlet>
+<md-toolbar class="navbar-fixed-top" color="warn">
+    <a class="topnav-button" (click)="sidenav.toggle()"><i class="fa fa-bars" aria-hidden="true"></i></a>
+    <span class="spacer"></span>
+    <a class="title" routerLink="/home">OneMovie</a>
+    <span class="spacer"></span>
+    <a *ngIf="!authentication.isAuthenticated" class="desktop topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+    <a *ngIf="!authentication.isAuthenticated" class="mobile topnav-button" routerLink="/sign-in"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+
+    <a *ngIf="authentication.isAuthenticated" class="desktop topnav-button" routerLink="/account"><i class="fa fa-user-o" aria-hidden="true"></i> {{authentication.userData['username']}}</a>
+    <a *ngIf="authentication.isAuthenticated" class="mobile topnav-button" routerLink="/account"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+</md-toolbar>
+
+
+
+<md-sidenav-container>
+  <md-sidenav #sidenav>
+    <form class="form-inline" #seachForm="ngForm" role="form" (submit)="search(); sidenav.toggle()">
+        <div class="input-group">
+            <span class="searchIcon input-group-addon" id="search"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <input type="text" required class="search form-control" placeholder="Rechercher un film ..." aria-describedby="search" name="search" [(ngModel)]="searchQuery">
+        </div>
+        <button type="submit" [disabled]="!seachForm.form.valid" hidden></button>
+    </form>
+
+    <a (click)="sidenav.toggle()" routerLink="/home" class="sidenav-button">En salles</a>
+    <a (click)="sidenav.toggle()" routerLink="/trending" class="sidenav-button">Populaire</a>
+    <a (click)="sidenav.toggle()" routerLink="/top-rated" class="sidenav-button">Meilleurs notes</a>
+    <a (click)="sidenav.toggle()" routerLink="/upcoming" class="sidenav-button">Prochainement</a>
+    <a (click)="sidenav.toggle()" *ngIf="authentication.isAuthenticated" routerLink="/favorites" class="sidenav-button">Favoris</a>
+    <a (click)="sidenav.toggle()" *ngIf="authentication.isAuthenticated" routerLink="/watchlist" class="sidenav-button">À regarder plus tard</a>
+    <a (click)="sidenav.toggle()" class="sidenav-button" routerLink="/about">À propos</a>
+
+  </md-sidenav>
+  <router-outlet></router-outlet>
+</md-sidenav-container>

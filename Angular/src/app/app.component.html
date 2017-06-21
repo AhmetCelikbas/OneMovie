@@ -1,1 +1,5 @@
+<div style="z-index: 1000;" *ngIf="loading">
+    <!-- show something fancy here, here with Angular 2 Material's loading bar or circle -->
+    <md-progress-bar mode="buffer" [value]="process"></md-progress-bar>
+</div>
 <router-outlet></router-outlet>
