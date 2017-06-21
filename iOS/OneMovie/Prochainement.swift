@@ -32,7 +32,7 @@ class Prochainement: UIViewController, UITableViewDelegate, UITableViewDataSourc
         // self.selectedMovieId = 0;
         self.currentPage = 1;
         
-        self.loadNowPlaying(page: self.currentPage);
+        self.loadTmdbData(page: self.currentPage);
         
         self.MoviesTableView.delegate = self
         self.MoviesTableView.dataSource = self
@@ -75,7 +75,7 @@ class Prochainement: UIViewController, UITableViewDelegate, UITableViewDataSourc
             // We check if we have another page to load
             if(self.currentPage < self.total_pages) {
                 self.currentPage += 1
-                loadNowPlaying(page: self.currentPage)
+                loadTmdbData(page: self.currentPage)
             }
         }
     }
@@ -84,10 +84,10 @@ class Prochainement: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBAction func scrollToTop(_ sender: UIButton) {
         self.MoviesTableView.setContentOffset(CGPoint.zero, animated: true)
         self.currentPage = 1
-        loadNowPlaying(page: self.currentPage)
+        loadTmdbData(page: self.currentPage)
     }
     
-    func loadNowPlaying(page: Int) {
+    func loadTmdbData(page: Int) {
         
         let spinner = JHSpinnerView.showOnView(view, spinnerColor:UIColor.red, overlay:.circular, overlayColor:UIColor.black.withAlphaComponent(0.9))
         
