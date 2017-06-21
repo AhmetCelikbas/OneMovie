@@ -172,23 +172,29 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Films actuellement en salles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sme-T8-WlN">
-                                        <rect key="frame" x="56" y="30" width="263.5" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEN-fM-E83">
+                                        <rect key="frame" x="8" y="42" width="359" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="DLa-7z-CBp"/>
+                                            <constraint firstAttribute="height" constant="30" id="p9b-gJ-73B"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <state key="normal" title="Films actuellement en salles">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="scrollToTop:" destination="Um9-Q0-Mja" eventType="touchUpInside" id="wci-Ue-sbJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95535367729999998" green="0.26255005599999998" blue="0.21381336449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="cay-uN-9Ug" firstAttribute="centerX" secondItem="Aqv-6c-MKs" secondAttribute="centerX" id="N73-ja-Gkj"/>
                                     <constraint firstItem="cay-uN-9Ug" firstAttribute="top" secondItem="Aqv-6c-MKs" secondAttribute="top" constant="20" id="ObP-f8-kL8"/>
+                                    <constraint firstAttribute="trailing" secondItem="TEN-fM-E83" secondAttribute="trailing" constant="8" id="P8K-bN-FS0"/>
+                                    <constraint firstItem="TEN-fM-E83" firstAttribute="leading" secondItem="Aqv-6c-MKs" secondAttribute="leading" constant="8" id="QdL-C9-Qut"/>
+                                    <constraint firstAttribute="bottom" secondItem="TEN-fM-E83" secondAttribute="bottom" constant="8" id="Uqc-S5-cnp"/>
                                     <constraint firstAttribute="height" constant="80" id="eBX-Vp-c4J"/>
-                                    <constraint firstAttribute="bottom" secondItem="sme-T8-WlN" secondAttribute="bottom" id="jF8-UA-UpC"/>
-                                    <constraint firstItem="sme-T8-WlN" firstAttribute="centerX" secondItem="Aqv-6c-MKs" secondAttribute="centerX" id="vHJ-Ya-1q8"/>
+                                    <constraint firstItem="TEN-fM-E83" firstAttribute="top" secondItem="cay-uN-9Ug" secondAttribute="bottom" constant="1.5" id="vS4-TJ-OXa"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="384" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PCG-4H-Fdh">

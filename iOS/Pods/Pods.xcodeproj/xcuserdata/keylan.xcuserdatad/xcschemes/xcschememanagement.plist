@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JHSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-OneMovie.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6F8C6D8E3025FD1B68AF1944D4C02709</key>
+		<key>0E9B221384CBE4E042ADD1C27EB02AAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1153DAEA8D68403608BFCE49BA6C642</key>
+		<key>8326B117C0DF3D332AFF946E52EF3116</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDD0C05384570D79D2C52F908240077D</key>
+		<key>CC0DE5C7090A89666F8C623E935209B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CCC6497A16F5604F1D009EB0BF84CF79</key>
 		<dict>
 			<key>primary</key>
 			<true/>

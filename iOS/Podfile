@@ -9,5 +9,6 @@ target 'OneMovie' do
 
 pod "TMDBSwift"
 pod "SWRevealViewController"
+pod "JHSpinner"
 
 end

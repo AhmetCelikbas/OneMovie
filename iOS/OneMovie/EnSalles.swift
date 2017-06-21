@@ -9,6 +9,7 @@
 import UIKit
 import SWRevealViewController
 import TMDBSwift
+import JHSpinner
 
 
 
@@ -17,6 +18,7 @@ class EnSalles: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var MoviesTableView: UITableView!
     
+ 
     var TableArray = [MovieMakup]()
     var currentPage = Int()
     var total_pages = Int()
@@ -78,7 +80,18 @@ class EnSalles: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
+    @IBAction func scrollToTop(_ sender: UIButton) {
+        self.MoviesTableView.setContentOffset(CGPoint.zero, animated: true)
+    }
+    
     func loadNowPlaying(page: Int) {
+        
+        let spinner = JHSpinnerView.showOnView(view, spinnerColor:UIColor.red, overlay:.circular, overlayColor:UIColor.black.withAlphaComponent(0.9))
+        
+        self.view.addSubview(spinner)
+        
+        
         MovieMDB.nowplaying(Config.apiKey, language: Config.language, page: page){
             data, nowPlaying in
             
@@ -111,6 +124,7 @@ class EnSalles: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     
                 // Refresh MoviesTableView when data is fetched
                 self.MoviesTableView.reloadData()
+                spinner.dismiss()
             }
         }
  

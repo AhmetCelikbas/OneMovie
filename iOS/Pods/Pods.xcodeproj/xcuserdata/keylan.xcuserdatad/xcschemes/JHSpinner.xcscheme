@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CC0DE5C7090A89666F8C623E935209B0'
-               BlueprintName = 'SWRevealViewController'
+               BlueprintIdentifier = '8326B117C0DF3D332AFF946E52EF3116'
+               BlueprintName = 'JHSpinner'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SWRevealViewController.framework'>
+               BuildableName = 'JHSpinner.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
