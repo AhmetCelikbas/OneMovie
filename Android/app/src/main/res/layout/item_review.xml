@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/review_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dist_large"
+    android:paddingLeft="@dimen/dist_large"
+    android:paddingRight="@dimen/dist_large"
+    android:paddingBottom="@dimen/dist_medium"
+    android:orientation="vertical">
+
+    <LinearLayout android:id="@+id/review_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/review_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Nom de l'autheur"/>
+
+        <TextView
+            android:id="@+id/review_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/dist_small"
+            android:textSize="@dimen/text_small"
+            android:visibility="gone"
+            tools:text="30 avril 2017"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/review_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dist_medium"
+        tools:text="Commentaire"/>
+
+</LinearLayout>
