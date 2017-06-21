@@ -89,26 +89,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (id) {
             case R.id.nav_in_theaters:
                 fragment = new MovieFragment();
-                args.putString("nav_param", "in_theaters");
+                args.putString("param_nav", "in_theaters");
                 break;
             case R.id.nav_popular:
                 fragment = new MovieFragment();
-                args.putString("nav_param", "popular");
+                args.putString("param_nav", "popular");
                 break;
             case R.id.nav_top_rated:
                 fragment = new MovieFragment();
-                args.putString("nav_param", "top_rated");
+                args.putString("param_nav", "top_rated");
                 break;
             case R.id.nav_upcoming:
                 fragment = new MovieFragment();
-                args.putString("nav_param", "upcoming");
+                args.putString("param_nav", "upcoming");
                 break;
             case R.id.nav_favorites:
-                args.putString("nav_param", "favorites");
+                args.putString("param_nav", "favorites");
                 Toast.makeText(this, "Fonctionnalité à venir", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_to_watch:
-                args.putString("nav_param", "to_watch");
+                args.putString("param_nav", "to_watch");
                 Toast.makeText(this, "Fonctionnalité à venir", Toast.LENGTH_SHORT).show();
                 break;
             /*
