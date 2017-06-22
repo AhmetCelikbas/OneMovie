@@ -1,6 +1,7 @@
 package com.lpsmin.onemovie.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.lpsmin.onemovie.DetailActivity;
 import com.lpsmin.onemovie.R;
 import com.lpsmin.onemovie.model.CastCredit;
 import com.lpsmin.onemovie.model.Movie;
@@ -56,11 +58,19 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         return new SearchAdapter.SearchViewHolder(v);
     }
     @Override
-    public void onBindViewHolder(SearchAdapter.SearchViewHolder viewHolder, int position) {
+    public void onBindViewHolder(SearchAdapter.SearchViewHolder viewHolder, final int position) {
         Movie movie = movies.get(position);
 
         // Title
         viewHolder.searchItem.setText(movie.getTitle());
+        viewHolder.searchItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("movie_id", movies.get(position).getId());
+                context.startActivity(intent);
+            }
+        });
     }
     @Override
     public int getItemCount() {
@@ -71,4 +81,5 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     public interface SearchClickListener {
         void onSearchClick(View v, final int position);
     }
+
 }

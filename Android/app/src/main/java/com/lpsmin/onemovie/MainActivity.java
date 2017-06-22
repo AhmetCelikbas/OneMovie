@@ -110,11 +110,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 args.putString("param_nav", "favorites");
                 Toast.makeText(this, "Fonctionnalité à venir", Toast.LENGTH_SHORT).show();
                 break;
+            /*
             case R.id.nav_to_watch:
                 args.putString("param_nav", "to_watch");
                 Toast.makeText(this, "Fonctionnalité à venir", Toast.LENGTH_SHORT).show();
                 break;
-            /*
             case R.id.nav_logout:
                 args.putString("item_type", "Logout");
                 Toast.makeText(this, "Authentification à venir", Toast.LENGTH_SHORT).show();

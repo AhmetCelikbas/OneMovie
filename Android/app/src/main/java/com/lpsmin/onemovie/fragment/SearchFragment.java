@@ -34,7 +34,7 @@ import retrofit2.Response;
  * Created by younes on 22/06/2017.
  */
 
-public class SearchFragment extends Fragment implements SearchAdapter.SearchClickListener {
+public class SearchFragment extends Fragment {
     private ArrayList<Movie> movies;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -47,6 +47,7 @@ public class SearchFragment extends Fragment implements SearchAdapter.SearchClic
 
         mSearchView = (SearchView) v.findViewById(R.id.search_view);
         mRecyclerView = (RecyclerView) v.findViewById(R.id.search_recycler_view);
+        emptyView = (TextView) v.findViewById(R.id.no_result);
 
         mRecyclerView.setHasFixedSize(true);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
@@ -54,6 +55,8 @@ public class SearchFragment extends Fragment implements SearchAdapter.SearchClic
         // set list item divider
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), mLayoutManager.getOrientation());
         mRecyclerView.addItemDecoration(itemDecoration);
+
+        movies = new ArrayList<Movie>();
 
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -65,11 +68,9 @@ public class SearchFragment extends Fragment implements SearchAdapter.SearchClic
             @Override
             public boolean onQueryTextChange(String newText) {
                 // do something when text changes
-                mAdapter = new SearchAdapter(getActivity(), movies);
-                mRecyclerView.setAdapter(mAdapter);
                 searchMovie(newText);
 
-                return false;
+                return true;
             }
         });
 
@@ -79,14 +80,7 @@ public class SearchFragment extends Fragment implements SearchAdapter.SearchClic
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getActivity().setTitle(getArguments().getString("Rechercher"));
-    }
-
-    @Override
-    public void onSearchClick(View v, int position) {
-        Intent intent = new Intent(getActivity(), DetailActivity.class);
-        intent.putExtra("movie_id", movies.get(position).getId());
-        startActivity(intent);
+        getActivity().setTitle("Rechercher");
     }
 
     private void searchMovie(String query) {
@@ -97,6 +91,9 @@ public class SearchFragment extends Fragment implements SearchAdapter.SearchClic
                 if (response.isSuccessful()) {
                     // request successful (status code 200, 201)
                     try {
+                        mAdapter = new SearchAdapter(getActivity(), movies);
+                        mRecyclerView.setAdapter(mAdapter);
+
                         List<Movie> result = response.body().getResults();
 
                         for (int i = 0; i < result.size(); i++) {

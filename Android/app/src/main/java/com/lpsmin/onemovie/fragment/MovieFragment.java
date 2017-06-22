@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import com.lpsmin.onemovie.R;
 import com.lpsmin.onemovie.DetailActivity;
 import com.lpsmin.onemovie.adapter.MovieAdapter;
+import com.lpsmin.onemovie.db.DBHandler;
+import com.lpsmin.onemovie.db.DBMovie;
 import com.lpsmin.onemovie.model.Movie;
 import com.lpsmin.onemovie.model.MovieResults;
 import com.lpsmin.onemovie.services.TmdbAPI;
@@ -37,6 +39,7 @@ public class MovieFragment extends Fragment implements MovieAdapter.MovieClickLi
     RecyclerView recyclerView;
     LinearLayoutManager LayoutManager;
     private String pNav;
+    private DBHandler db;
 
     // Override Methods:
     @Override
@@ -62,7 +65,18 @@ public class MovieFragment extends Fragment implements MovieAdapter.MovieClickLi
                 getMovies();
             }
         });
-        getMovies();
+        if (pNav=="favorites") {
+            swipeRefreshLayout.setEnabled(false);
+            db = new DBHandler(getActivity());
+            db.open();
+            List<DBMovie> dbMovies = db.getAllObj();
+            db.close();
+            for (final DBMovie dbm: dbMovies) {
+                getMovie(dbm.getId());
+            }
+        } else {
+            getMovies();
+        }
 
         return v;
     }
@@ -128,6 +142,39 @@ public class MovieFragment extends Fragment implements MovieAdapter.MovieClickLi
             }
             @Override
             public void onFailure(Call<MovieResults> call, Throwable t) {
+                // something went completely south (like no internet connection)
+            }
+        });
+    }
+
+    public void getMovie(int id) {
+        if (adapter == null) {
+            adapter = new MovieAdapter(getActivity(), movies);
+            recyclerView.setAdapter(adapter);
+        }
+
+        Call<Movie> call = TmdbAPI.moviesService().getMovie(id, "fr", null);
+
+        call.enqueue(new Callback<Movie>() {
+            @Override
+            public void onResponse(Call<Movie> call, Response<Movie> response) {
+                if (response.isSuccessful()) {
+                    // request successful (status code 200, 201)
+                    try {
+                        Movie result = response.body();
+                        movies.add(result);
+                        adapter.notifyDataSetChanged();
+                        swipeRefreshLayout.setRefreshing(false);
+                    } catch(Exception e) {
+
+                    }
+                } else {
+                    // response received but request not successful (like 400,401,403 etc)
+                    // Handle errors
+                }
+            }
+            @Override
+            public void onFailure(Call<Movie> call, Throwable t) {
                 // something went completely south (like no internet connection)
             }
         });

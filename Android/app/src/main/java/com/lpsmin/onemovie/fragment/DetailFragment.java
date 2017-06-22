@@ -2,6 +2,8 @@ package com.lpsmin.onemovie.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import com.lpsmin.onemovie.R;
 import com.lpsmin.onemovie.adapter.CastAdapter;
 import com.lpsmin.onemovie.adapter.MovieAdapter;
+import com.lpsmin.onemovie.db.DBHandler;
+import com.lpsmin.onemovie.db.DBMovie;
 import com.lpsmin.onemovie.model.CastCredit;
 import com.lpsmin.onemovie.model.Credit;
 import com.lpsmin.onemovie.model.Credits;
@@ -37,8 +41,11 @@ import retrofit2.Response;
 
 public class DetailFragment extends Fragment {
     private int movie_id;
+    private Movie fMovie;
+    private Boolean gotMovie = false;
     private CastAdapter adapter;
     private ArrayList<CastCredit> castList;
+    private DBHandler db;
 
     ImageView movieImage;
     TextView overview;
@@ -72,6 +79,21 @@ public class DetailFragment extends Fragment {
 */
         getMovie(movie_id);
 
+        db = new DBHandler(getActivity());
+        FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (gotMovie) {
+                    db.open();
+                    db.add(fMovie);
+                    db.close();
+                    Snackbar.make(view, "Film ajouté aux favoris", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            }
+        });
+
         return v;
     }
 
@@ -84,7 +106,8 @@ public class DetailFragment extends Fragment {
                     // request successful (status code 200, 201)
                     try {
                         Movie movie = response.body();
-
+                        fMovie = movie;
+                        gotMovie = true;
                         getActivity().setTitle(movie.getTitle());
                         overview.setText(movie.getOverview());
                         date.setText(movie.getRelease_date().toString());

@@ -22,10 +22,12 @@
             android:id="@+id/nav_favorites"
             android:icon="@drawable/ic_favorite"
             android:title="Favoris" />
+        <!--
         <item
             android:id="@+id/nav_to_watch"
             android:icon="@drawable/ic_playlist_play"
             android:title="À regarder" />
+            -->
     </group>
 
     <item android:title="Autre">

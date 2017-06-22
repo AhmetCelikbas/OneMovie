@@ -19,14 +19,18 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.lpsmin.onemovie.db.DBHandler;
+import com.lpsmin.onemovie.db.DBMovie;
 import com.lpsmin.onemovie.fragment.DetailFragment;
 import com.lpsmin.onemovie.fragment.ReviewFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
 
     private int movie_id;
+    private DBHandler db;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -63,15 +67,6 @@ public class DetailActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
     }
 
