@@ -26,6 +26,8 @@
 		7548B64F1EF9F06E000223EF /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548B64E1EF9F06E000223EF /* MovieTableViewCell.swift */; };
 		7548B6531EFB3E89000223EF /* CastingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548B6521EFB3E89000223EF /* CastingTableViewCell.swift */; };
 		7548B6551EFB3FA7000223EF /* CastingMakup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548B6541EFB3FA7000223EF /* CastingMakup.swift */; };
+		7548B6571EFB5039000223EF /* Favoris.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548B6561EFB5039000223EF /* Favoris.swift */; };
+		7548B6591EFB5043000223EF /* ARegarderPlusTard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548B6581EFB5043000223EF /* ARegarderPlusTard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		7548B64E1EF9F06E000223EF /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		7548B6521EFB3E89000223EF /* CastingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastingTableViewCell.swift; sourceTree = "<group>"; };
 		7548B6541EFB3FA7000223EF /* CastingMakup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastingMakup.swift; sourceTree = "<group>"; };
+		7548B6561EFB5039000223EF /* Favoris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favoris.swift; sourceTree = "<group>"; };
+		7548B6581EFB5043000223EF /* ARegarderPlusTard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARegarderPlusTard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 				7548B6081EF8832D000223EF /* Recherche.swift */,
 				7548B6231EF8BD28000223EF /* EnSalles.swift */,
 				7548B6251EF8C656000223EF /* APropos.swift */,
+				7548B6561EFB5039000223EF /* Favoris.swift */,
+				7548B6581EFB5043000223EF /* ARegarderPlusTard.swift */,
 				7548B62D1EF8C6B9000223EF /* Prochainement.swift */,
 				7548B62B1EF8C697000223EF /* MeilleursNotes.swift */,
 				7548B6271EF8C677000223EF /* Populaire.swift */,
@@ -279,8 +285,10 @@
 			files = (
 				7548B62C1EF8C697000223EF /* MeilleursNotes.swift in Sources */,
 				7548B6531EFB3E89000223EF /* CastingTableViewCell.swift in Sources */,
+				7548B6571EFB5039000223EF /* Favoris.swift in Sources */,
 				7548B6411EF9C618000223EF /* imageDownloader.swift in Sources */,
 				7548B63E1EF9C594000223EF /* MovieMakup.swift in Sources */,
+				7548B6591EFB5043000223EF /* ARegarderPlusTard.swift in Sources */,
 				7548B6261EF8C656000223EF /* APropos.swift in Sources */,
 				7548B6241EF8BD28000223EF /* EnSalles.swift in Sources */,
 				7548B6551EFB3FA7000223EF /* CastingMakup.swift in Sources */,
