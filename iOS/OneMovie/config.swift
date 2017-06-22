@@ -16,7 +16,10 @@ struct Config {
     static let language = "fr"
     
     static let url_poster_path = "https://image.tmdb.org/t/p/w500/"
+    static let url_profile_path = "https://image.tmdb.org/t/p/w185/"
+    static let url_backdrop_path = "https://image.tmdb.org/t/p/w780/"
     static let url_no_poster_available = "http://ddbu.billiardport.com/img/posters/no_poster_available.jpg"
+    static let url_youtube_embed = "https://www.youtube.com/embed/"
     
     static let url_discover = "https://api.themoviedb.org/3/discover/movie"
     static let url_search = "https://api.themoviedb.org/3/search/movie"
