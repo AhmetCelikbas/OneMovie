@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lpsmin.onemovie.R;
@@ -34,7 +35,7 @@ public class CastAdapter extends RecyclerView.Adapter<CastAdapter.CastViewHolder
 
     public static class CastViewHolder extends RecyclerView.ViewHolder {
         public CardView castItem;
-        public CircleImageView castImage;
+        public ImageView castImage;
         public TextView castName;
         public TextView castRole;
         public CastClickListener castClickListener;
@@ -42,7 +43,7 @@ public class CastAdapter extends RecyclerView.Adapter<CastAdapter.CastViewHolder
         public CastViewHolder(final ViewGroup itemView) {
             super(itemView);
             castItem = (CardView) itemView.findViewById(R.id.cast_item);
-            castImage = (CircleImageView) itemView.findViewById(R.id.cImageView);
+            castImage = (ImageView) itemView.findViewById(R.id.cast_image);
             castName = (TextView) itemView.findViewById(R.id.cast_name);
             castRole = (TextView) itemView.findViewById(R.id.cast_role);
 

@@ -43,7 +43,7 @@ public class MovieFragment extends Fragment implements MovieAdapter.MovieClickLi
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_movie, container, false);
 
-        pNav = getArguments().getString("param_nav");
+        pNav = getArguments().getString("param_nav", "in_theaters");
         swipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.swipe_refresh);
         recyclerView = (RecyclerView) v.findViewById(R.id.movie_recycler_view);
 
@@ -70,7 +70,7 @@ public class MovieFragment extends Fragment implements MovieAdapter.MovieClickLi
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getActivity().setTitle("Movie Frag");
+        getActivity().setTitle(getArguments().getString("title"));
     }
     @Override
     public void onMovieClick(View v, int position) {
@@ -117,6 +117,7 @@ public class MovieFragment extends Fragment implements MovieAdapter.MovieClickLi
                             movies.add(result.get(i));
                         }
                         adapter.notifyDataSetChanged();
+                        swipeRefreshLayout.setRefreshing(false);
                     } catch(Exception e) {
 
                     }

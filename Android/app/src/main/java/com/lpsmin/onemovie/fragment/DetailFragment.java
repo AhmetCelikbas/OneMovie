@@ -56,21 +56,20 @@ public class DetailFragment extends Fragment {
         movie_id = getArguments().getInt("movie_id");
         getActivity().setTitle("");
 
-        movieImage = (ImageView) v.findViewById(R.id.movie_image);
+        movieImage = (ImageView) v.findViewById(R.id.detail_movie_image);
         overview = (TextView) v.findViewById(R.id.movie_overview);
-        genres = (TextView) v.findViewById(R.id.movie_genre);
-        date = (TextView) v.findViewById(R.id.movie_date);
-        rating = (TextView) v.findViewById(R.id.movie_rating);
+        genres = (TextView) v.findViewById(R.id.detail_movie_genre);
+        date = (TextView) v.findViewById(R.id.detail_movie_date);
+        rating = (TextView) v.findViewById(R.id.detail_movie_rating);
         recyclerView = (RecyclerView) v.findViewById(R.id.cast_recycler_view);
-
-        /*
+/*
+        recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         adapter = new CastAdapter(getActivity(), castList);
         recyclerView.setAdapter(adapter);
-        */
-
+*/
         getMovie(movie_id);
 
         return v;
@@ -85,15 +84,18 @@ public class DetailFragment extends Fragment {
                     // request successful (status code 200, 201)
                     try {
                         Movie movie = response.body();
+
                         getActivity().setTitle(movie.getTitle());
                         overview.setText(movie.getOverview());
                         date.setText(movie.getRelease_date().toString());
                         rating.setText(movie.getVote_average().toString());
+
                         Picasso
                                 .with(getContext())
                                 .load("http://image.tmdb.org/t/p/w500/"+movie.getBackdrop_path())
                                 .placeholder(R.drawable.default_movie_image)
                                 .into(movieImage);
+
                         String genre = "";
                         for (int i = 0; i < movie.getGenres().size(); i++) {
                             if (i == 0) {
@@ -103,7 +105,7 @@ public class DetailFragment extends Fragment {
                             }
                         }
                         genres.setText(genre);
-                        getCast(id);
+                        //getCast(id);
                     } catch(Exception e) {
 
                     }

@@ -19,8 +19,8 @@
         android:orientation="vertical">
 
         <!-- Cast image -->
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/cImageView"
+        <ImageView
+            android:id="@+id/cast_image"
             android:layout_width="@dimen/movie_list_img_size"
             android:layout_height="@dimen/movie_list_img_size"
             android:background="@color/cardview_shadow_start_color" />

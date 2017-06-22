@@ -44,7 +44,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         public TextView movieName;
         public TextView movieDate;
         public TextView movieRating;
-        public TextView movieGenre;
+        //public TextView movieGenre;
         public MovieClickListener movieClickListener;
 
         public MovieViewHolder(final ViewGroup itemView) {
@@ -55,7 +55,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             movieDate = (TextView) itemView.findViewById(R.id.movie_date);
             movieRating = (TextView) itemView.findViewById(R.id.movie_rating);
             movieRatingIcon = (ImageView) itemView.findViewById(R.id.rating_icon);
-            movieGenre = (TextView) itemView.findViewById(R.id.movie_genre);
+            //movieGenre = (TextView) itemView.findViewById(R.id.movie_genre);
 
             movieItem.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -79,7 +79,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         // Title, year
         viewHolder.movieName.setText(movie.getTitle());
         viewHolder.movieDate.setText(movie.getRelease_date().toString());
-        viewHolder.movieGenre.setText(movie.getRelease_date().toString());
+        //viewHolder.movieGenre.setText(movie.getRelease_date().toString());
         // Load image
         if (TextUtils.isEmpty(movie.getBackdrop_path())) {
             viewHolder.movieImage.setImageResource(R.drawable.default_movie_image);

@@ -51,15 +51,15 @@ public class DetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        movie_id = getIntent().getIntExtra("movie_id", 0);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        movie_id = getIntent().getIntExtra("movie_id", 297762);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
@@ -117,18 +117,22 @@ public class DetailActivity extends AppCompatActivity {
             //return PlaceholderFragment.newInstance(position + 1);
             Bundle args = new Bundle();
             args.putInt("movie_id", movie_id);
+            Fragment fragment;
 
             switch (position) {
                 case 0:
-                    DetailFragment df = new DetailFragment();
-                    df.setArguments(args);
-                    return df;
+                    fragment = new DetailFragment();
+                    fragment.setArguments(args);
+                    return fragment;
                 case 1:
-                    ReviewFragment rf = new ReviewFragment();
-                    rf.setArguments(args);
-                    return rf;
+                    fragment = new ReviewFragment();
+                    fragment.setArguments(args);
+                    return fragment;
+                default:
+                    fragment = new DetailFragment();
+                    fragment.setArguments(args);
+                    return fragment;
             }
-            return null;
         }
 
         @Override
@@ -154,9 +158,9 @@ public class DetailActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
+
 }

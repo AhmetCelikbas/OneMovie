@@ -49,17 +49,18 @@ public class ReviewFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_review, container, false);
 
         movie_id = getArguments().getInt("movie_id");
-        getMovie(movie_id);
 
         recyclerView = (RecyclerView) v.findViewById(R.id.review_list);
         author = (TextView) v.findViewById(R.id.review_author);
         content = (TextView) v.findViewById(R.id.review_content);
-
+/*
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         adapter = new ReviewAdapter(getActivity(), reviewList);
         recyclerView.setAdapter(adapter);
+*/
+        getMovie(movie_id);
 
         return v;
     }
